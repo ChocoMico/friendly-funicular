@@ -41,7 +41,7 @@ jobs:
           cd /usr/src/server
           python3 encode.py
 
-      - name: Cache files
+      - name: Cache files after encode
         id: cache-files
         uses: actions/cache@v3
         with:
@@ -66,7 +66,7 @@ jobs:
           cd /usr/src/server
           python3 encode.py
 
-      - name: Cache files
+      - name: Cache files after encode
         id: cache-files
         uses: actions/cache@v3
         with:
@@ -91,7 +91,7 @@ jobs:
           cd /usr/src/server
           python3 encode.py
 
-      - name: Cache files
+      - name: Cache files after encode
         id: cache-files
         uses: actions/cache@v3
         with:
@@ -116,7 +116,7 @@ jobs:
           cd /usr/src/server
           python3 encode.py
 
-      - name: Cache files
+      - name: Cache files after encode
         id: cache-files
         uses: actions/cache@v3
         with:
