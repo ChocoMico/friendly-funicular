@@ -42,7 +42,7 @@ jobs:
           python3 encode.py
 
       - name: Cache files after encode
-        id: cache-files
+        id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
@@ -67,7 +67,7 @@ jobs:
           python3 encode.py
 
       - name: Cache files after encode
-        id: cache-files
+        id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
@@ -92,7 +92,7 @@ jobs:
           python3 encode.py
 
       - name: Cache files after encode
-        id: cache-files
+        id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
@@ -117,7 +117,7 @@ jobs:
           python3 encode.py
 
       - name: Cache files after encode
-        id: cache-files
+        id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
