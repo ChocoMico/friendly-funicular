@@ -1,8 +1,10 @@
 name: Raphael server instance
-'on':
+
+on:
   push:
     branches:
       - server
+
 jobs:
   download:
     runs-on: ubuntu-latest
@@ -15,11 +17,12 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}
+
       - name: Run script
         run: |
           cd /usr/src/server
           python3 download.py ZnVjawZXlKUFYwNUZVaUk2SWtOb2IyTnZUV2xqYnlJc0lsSkZVRThpT2lKbWNtbGxibVJzZVMxbWRXNXBZM1ZzWVhJaUxDSlVSMTlCVUVsZlNVUWlPaUl6TlRVeE5EWWlMQ0pVUjE5QlVFbGZTRUZUU0NJNklqTTBaR1kwTURnek5qQXhaamM1Wm1ZM05HRm1ObU0xWTJRellqTmxNekJoSWl3aVZFZGZRazlVWDFSUFMwVk9Jam9pTlRBMk1EQTVNREk0T0RwQlFVVmpMVmRVU1RaQlVUbHlZbEV0UjE5R1JVWTFTVFp1UVVGeVptRjJVMDB5VVNJc0lrWkpURVVpT2pZek9UWXlMQ0pKUkNJNklrNTNSVVJFYVUxclQzbFdObGQxZFV4WFMzTlRJaXdpUTAxRUlqb2laWGxLYW1JeU1YUlpWelZyWTNsSk5tVjVTbXBpTWpGcFlWYzFiRWxxY0dKSmJWcHRZbGhDYkZwNVFYUmxVMEYwWW0wNWVtUkhVbkJpYVVGMFlVZHNhMXBXT1dsWlZ6VjFXbGhKWjB4WE5YWmpNMUpvWkVoTloweFhlSFphTW5oc1pHMVdjMGxIVm5samJUbDVTVU14YlVsSFRuWmliVTVvWkVOQmRHRlRRbnBhVjJSMFdsYzFNR041TlcxYWJVNW9aRU5CZEZsNVFtcGlNMEkxU1VoYWNGcEhWblpNVjNOMVlsZDBNa2xwZDJsYWJWcDBZMGRXYmtsRE1UVkpRekYxWWpOT01GcEhiSFZKUXpGdllWZFNiRmd5U21oaWJUVnNZMmxCZEdKdE9YcGtSMFl3WTNsQmRHSkhPVzVpUjFZeVdsZDNaMXBZU25saU0wbG5URmRyWjJVeVduQmlSMVk1U1VNeGRGbFlRV2ROUkhCb1QycEJMMGxETVRKaWFVRjBXWHB3YUVsSGVIQlpiVGwzWkZoTloweFhSbXBKUkVsblRGZEpObGxUUVRKT1IzTm5XVmhXYTJGWE9IVmlWM1JvU1dsM2FWcHRXblJqUjFadVNVTXhOVWxETVhWaU0wNHdXa2RzZFVsRE1XOWhWMUpzV0RKS2FHSnROV3hqYVVGMFltMDVlbVJIUmpCamVVRjBZa2M1Ym1KSFZqSmFWM2RuV2xoS2VXSXpTV2RNVjJ0blpHMXNhMXBYT0hSaGVUVjBZVE5aWjB4WGEyZFpXRlpyWVZjNGRXSlhkR2hKUXpGd1NVaDBiV0ZYZUd4bVUwRjBZbGRHZDBsRVFUWmthVUYwWWxkR2QwbEVSVFpaVTBGMFlsZEdkMGxFU1RaamVqaG5URmROTmxsVFFtcGlNMEkxU1VNeGFrOXVXV2RaTWpsM1pWTkJkRmw2Y0hwSlIwNTJZMGhyWjBvelRteGpiV3hzWTNsQ2VtRlhaSFJaVXpGVVpUTk9iRmxZVG5aaWJqQm5VbGgwYkdOSGJIcGlNbEpzWmxOQ04ySnRSblJhV0RCMVlsZDBNa3A1U1hOSmJWcHRZbGhDYkZwNVFYUmxVMEYwWW0wNWVtUkhVbkJpYVVGMFlVZHNhMXBXT1dsWlZ6VjFXbGhKWjB4WE5YWmpNMUpvWkVoTloweFhlSFphTW5oc1pHMVdjMGxIVm5samJUbDVTVU14Y0VsRFpIcGFXRXB3V2xoTloyTXliRzVpVjBWMFZUTjBlbHBYUm5waU1qVTVTVVZXTjFwWVFuQmpNamxyV2xnd1oyVXlOV2hpVjFZNVRHMHhjbVJwWTJkTVdFNTZTVVJCZDA5cVFYZFBha0Y0VEdwQmQwMURRWFJrYlZwNVdWY3hiR041UVhoSlF6RjZTVVJOZVUxSVozcE5ha0ZuWkVkb01XSlhTWFZoYmtKc1dubEpjMGx0V20xaVdFSnNXbmxCZEdWVFFYUmliVGw2WkVkU2NHSnBRWFJoUjJ4cldsWTVhVmxYTlhWYVdFbG5URmMxZG1NelVtaGtTRTFuVEZkNGRsb3llR3hrYlZaelNVZFdlV050T1hsSlF6RndTVU5rZWxwWVNuQmFXRTFuWXpKc2JtSlhSWFJWTTNSNldsZEdlbUl5TlRsSlJWWTNXbGhDY0dNeU9XdGFXREJuWlRJMWFHSlhWamxNYlRGeVpHbGpaMHhZVG5wSlJFRjNUMnBCZWs5cVFYZE1ha0YzVFVOQmRHUnRXbmxaVnpGc1kzbEJlRWxETVhwSlJFMTVUVWhuZWsxcVFXZGtSMmd4WWxkSmRXRnVRbXhhZVVwa1RFTktlbHBYWkhSYVZ6VXdZM2xKTmxkNVNtMWFiVEYzV2xkaloweFlhMmRNVnpWMll6TlNhMkZYTkdkTVYyaHdXa2RXWmxsdFJuVmliVlo1U1VNeGRXSXpUakJaV0ZKNlNVTXhjMkl5WkhOYVdGcHNZa05DYkdOdVNuWmphVUYwWVZOQ2VscFhaRGRqTWxadVlsZFdkV1JFYjNkTk1sSTVURzB4Y21ScFFYUmlWMFozU1VSQk5tUnBRWFJaZW5BeVNVZDRjRmx1WjNsT2FsVm5URmhDZVZwWVRteGtRMEo2WWtjNU0wbERNVFJOYWxreFRGaENhR050Um5SamVVRnVZa2M1ZG1FeVJtOWFWMFpyVEZoT2MyRlhUbXhqZWpBeFQyNUtha3hYZUhaaU1uUm9ZVWRXYUZwRU1EQk5SSEJwV201S2FHSlhWbnBRVkdjMllsZFZPV016VW1oamFuQm9ZMU14ZEdJeVVteFFWRTAyWTIxV2JWQlVXVFpqU0U0MVRGaEthMUJVUlRaWldFVjBZek5TZVZwWE5XNWtSMmM1VFVNME5FcDVRWFJhYld4elpFZFdlVmd5VG5aaVdFSnpXbGhuWjBveU1YWmtiV3hzVUZoa2FHUkhWbmxpVjBaNVlURTVlbHBZU25CYVdFMTFZMGMxYmtsR2RETlpXRkpzWTIweGFHTnRkR1JQTVhOM1dGaE9hbGxYZUd4UVZHTjVUVVJ2ZEUxVVdXZFhNbXgxV0ZSMFltRlhOV1JYTTJSb1pFZFdlV0pYUm5saE1UQm5Zak5hYkdOdGVHaGxWREI1VDJwSmJrbERNV3BqYlZsblRXcGpaMHhZUW5CbFJqbHRZbGhSWjJWWVZqSk9SRWwzWTBSRmQySkhWV2RrYld4cldsYzRkR0V6ZEhwYVYyUjBXbGMxTUU5cVFYcGFTREIxWWxkME1rbHNNVGxNUTBwMlpGaFNkMlJZVW5wSmFuQmlaWGxLYldGWGVHeEphbTlwWXpKV2VXRlhWbnBKU0U1d1dqSXhhRXhXVFhwSlJWVXpTVVZTTldKdFJucGtTR3QxWWxkME1rbHBkMmxrUjJneFlsZEphVTlwU2pCaFNGWjBXV2sxY1dOSFZtNUphWGRwWWtkR2RWcDVTVFpKYlZaMVdubEtPVmhZTUQwaWZRPT0=
-          
+
   encode1:
     runs-on: ubuntu-latest
     needs: download
@@ -32,10 +35,19 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}
+
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
+
+      - name: Cache files
+        id: cache-files
+        uses: actions/cache@v3
+        with:
+          path: /usr/src/server
+          key: ${{ github.sha }}-1
+
   encode2:
     runs-on: ubuntu-latest
     needs: encode1
@@ -47,11 +59,20 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /usr/src/server
-          key: ${{ github.sha }}
+          key: ${{ github.sha }}-1
+
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
+
+      - name: Cache files
+        id: cache-files
+        uses: actions/cache@v3
+        with:
+          path: /usr/src/server
+          key: ${{ github.sha }}-2
+
   encode3:
     runs-on: ubuntu-latest
     needs: encode2
@@ -63,11 +84,20 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /usr/src/server
-          key: ${{ github.sha }}
+          key: ${{ github.sha }}-2
+
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
+
+      - name: Cache files
+        id: cache-files
+        uses: actions/cache@v3
+        with:
+          path: /usr/src/server
+          key: ${{ github.sha }}-3
+
   encode4:
     runs-on: ubuntu-latest
     needs: encode3
@@ -79,11 +109,20 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /usr/src/server
-          key: ${{ github.sha }}
+          key: ${{ github.sha }}-3
+
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
+
+      - name: Cache files
+        id: cache-files
+        uses: actions/cache@v3
+        with:
+          path: /usr/src/server
+          key: ${{ github.sha }}-4
+
   upload:
     runs-on: ubuntu-latest
     needs: encode4
@@ -95,7 +134,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: /usr/src/server
-          key: ${{ github.sha }}
+          key: ${{ github.sha }}-4
+
       - name: Run script
         run: |
           cd /usr/src/server
