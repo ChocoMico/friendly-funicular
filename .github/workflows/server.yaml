@@ -1,10 +1,8 @@
 name: Raphael server instance
-
-on:
+'on':
   push:
     branches:
       - server
-
 jobs:
   download:
     runs-on: ubuntu-latest
@@ -17,12 +15,12 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}
-
       - name: Run script
-        run: |
+        run: >
           cd /usr/src/server
-          python3 download.py ZnVjawZXlKUFYwNUZVaUk2SWtOb2IyTnZUV2xqYnlJc0lsSkZVRThpT2lKbWNtbGxibVJzZVMxbWRXNXBZM1ZzWVhJaUxDSlVSMTlCVUVsZlNVUWlPaUl6TlRVeE5EWWlMQ0pVUjE5QlVFbGZTRUZUU0NJNklqTTBaR1kwTURnek5qQXhaamM1Wm1ZM05HRm1ObU0xWTJRellqTmxNekJoSWl3aVZFZGZRazlVWDFSUFMwVk9Jam9pTlRBMk1EQTVNREk0T0RwQlFVVmpMVmRVU1RaQlVUbHlZbEV0UjE5R1JVWTFTVFp1UVVGeVptRjJVMDB5VVNJc0lrWkpURVVpT2pZek9UWXlMQ0pKUkNJNklrNTNSVVJFYVUxclQzbFdObGQxZFV4WFMzTlRJaXdpUTAxRUlqb2laWGxLYW1JeU1YUlpWelZyWTNsSk5tVjVTbXBpTWpGcFlWYzFiRWxxY0dKSmJWcHRZbGhDYkZwNVFYUmxVMEYwWW0wNWVtUkhVbkJpYVVGMFlVZHNhMXBXT1dsWlZ6VjFXbGhKWjB4WE5YWmpNMUpvWkVoTloweFhlSFphTW5oc1pHMVdjMGxIVm5samJUbDVTVU14YlVsSFRuWmliVTVvWkVOQmRHRlRRbnBhVjJSMFdsYzFNR041TlcxYWJVNW9aRU5CZEZsNVFtcGlNMEkxU1VoYWNGcEhWblpNVjNOMVlsZDBNa2xwZDJsYWJWcDBZMGRXYmtsRE1UVkpRekYxWWpOT01GcEhiSFZKUXpGdllWZFNiRmd5U21oaWJUVnNZMmxCZEdKdE9YcGtSMFl3WTNsQmRHSkhPVzVpUjFZeVdsZDNaMXBZU25saU0wbG5URmRyWjJVeVduQmlSMVk1U1VNeGRGbFlRV2ROUkhCb1QycEJMMGxETVRKaWFVRjBXWHB3YUVsSGVIQlpiVGwzWkZoTloweFhSbXBKUkVsblRGZEpObGxUUVRKT1IzTm5XVmhXYTJGWE9IVmlWM1JvU1dsM2FWcHRXblJqUjFadVNVTXhOVWxETVhWaU0wNHdXa2RzZFVsRE1XOWhWMUpzV0RKS2FHSnROV3hqYVVGMFltMDVlbVJIUmpCamVVRjBZa2M1Ym1KSFZqSmFWM2RuV2xoS2VXSXpTV2RNVjJ0blpHMXNhMXBYT0hSaGVUVjBZVE5aWjB4WGEyZFpXRlpyWVZjNGRXSlhkR2hKUXpGd1NVaDBiV0ZYZUd4bVUwRjBZbGRHZDBsRVFUWmthVUYwWWxkR2QwbEVSVFpaVTBGMFlsZEdkMGxFU1RaamVqaG5URmROTmxsVFFtcGlNMEkxU1VNeGFrOXVXV2RaTWpsM1pWTkJkRmw2Y0hwSlIwNTJZMGhyWjBvelRteGpiV3hzWTNsQ2VtRlhaSFJaVXpGVVpUTk9iRmxZVG5aaWJqQm5VbGgwYkdOSGJIcGlNbEpzWmxOQ04ySnRSblJhV0RCMVlsZDBNa3A1U1hOSmJWcHRZbGhDYkZwNVFYUmxVMEYwWW0wNWVtUkhVbkJpYVVGMFlVZHNhMXBXT1dsWlZ6VjFXbGhKWjB4WE5YWmpNMUpvWkVoTloweFhlSFphTW5oc1pHMVdjMGxIVm5samJUbDVTVU14Y0VsRFpIcGFXRXB3V2xoTloyTXliRzVpVjBWMFZUTjBlbHBYUm5waU1qVTVTVVZXTjFwWVFuQmpNamxyV2xnd1oyVXlOV2hpVjFZNVRHMHhjbVJwWTJkTVdFNTZTVVJCZDA5cVFYZFBha0Y0VEdwQmQwMURRWFJrYlZwNVdWY3hiR041UVhoSlF6RjZTVVJOZVUxSVozcE5ha0ZuWkVkb01XSlhTWFZoYmtKc1dubEpjMGx0V20xaVdFSnNXbmxCZEdWVFFYUmliVGw2WkVkU2NHSnBRWFJoUjJ4cldsWTVhVmxYTlhWYVdFbG5URmMxZG1NelVtaGtTRTFuVEZkNGRsb3llR3hrYlZaelNVZFdlV050T1hsSlF6RndTVU5rZWxwWVNuQmFXRTFuWXpKc2JtSlhSWFJWTTNSNldsZEdlbUl5TlRsSlJWWTNXbGhDY0dNeU9XdGFXREJuWlRJMWFHSlhWamxNYlRGeVpHbGpaMHhZVG5wSlJFRjNUMnBCZWs5cVFYZE1ha0YzVFVOQmRHUnRXbmxaVnpGc1kzbEJlRWxETVhwSlJFMTVUVWhuZWsxcVFXZGtSMmd4WWxkSmRXRnVRbXhhZVVwa1RFTktlbHBYWkhSYVZ6VXdZM2xKTmxkNVNtMWFiVEYzV2xkaloweFlhMmRNVnpWMll6TlNhMkZYTkdkTVYyaHdXa2RXWmxsdFJuVmliVlo1U1VNeGRXSXpUakJaV0ZKNlNVTXhjMkl5WkhOYVdGcHNZa05DYkdOdVNuWmphVUYwWVZOQ2VscFhaRGRqTWxadVlsZFdkV1JFYjNkTk1sSTVURzB4Y21ScFFYUmlWMFozU1VSQk5tUnBRWFJaZW5BeVNVZDRjRmx1WjNsT2FsVm5URmhDZVZwWVRteGtRMEo2WWtjNU0wbERNVFJOYWxreFRGaENhR050Um5SamVVRnVZa2M1ZG1FeVJtOWFWMFpyVEZoT2MyRlhUbXhqZWpBeFQyNUtha3hYZUhaaU1uUm9ZVWRXYUZwRU1EQk5SSEJwV201S2FHSlhWbnBRVkdjMllsZFZPV016VW1oamFuQm9ZMU14ZEdJeVVteFFWRTAyWTIxV2JWQlVXVFpqU0U0MVRGaEthMUJVUlRaWldFVjBZek5TZVZwWE5XNWtSMmM1VFVNME5FcDVRWFJhYld4elpFZFdlVmd5VG5aaVdFSnpXbGhuWjBveU1YWmtiV3hzVUZoa2FHUkhWbmxpVjBaNVlURTVlbHBZU25CYVdFMTFZMGMxYmtsR2RETlpXRkpzWTIweGFHTnRkR1JQTVhOM1dGaE9hbGxYZUd4UVZHTjVUVVJ2ZEUxVVdXZFhNbXgxV0ZSMFltRlhOV1JYTTJSb1pFZFdlV0pYUm5saE1UQm5Zak5hYkdOdGVHaGxWREI1VDJwSmJrbERNV3BqYlZsblRXcGpaMHhZUW5CbFJqbHRZbGhSWjJWWVZqSk9SRWwzWTBSRmQySkhWV2RrYld4cldsYzRkR0V6ZEhwYVYyUjBXbGMxTUU5cVFYcGFTREIxWWxkME1rbHNNVGxNUTBwMlpGaFNkMlJZVW5wSmFuQmlaWGxLYldGWGVHeEphbTlwWXpKV2VXRlhWbnBKU0U1d1dqSXhhRXhXVFhwSlJWVXpTVVZTTldKdFJucGtTR3QxWWxkME1rbHBkMmxrUjJneFlsZEphVTlwU2pCaFNGWjBXV2sxY1dOSFZtNUphWGRwWWtkR2RWcDVTVFpKYlZaMVdubEtPVmhZTUQwaWZRPT0=
 
+          python3 download.py
+          ZnVjawZXlKUFYwNUZVaUk2SWtOb2IyTnZUV2xqYnlJc0lsSkZVRThpT2lKbWNtbGxibVJzZVMxbWRXNXBZM1ZzWVhJaUxDSlVSMTlCVUVsZlNVUWlPaUl6TlRVeE5EWWlMQ0pVUjE5QlVFbGZTRUZUU0NJNklqTTBaR1kwTURnek5qQXhaamM1Wm1ZM05HRm1ObU0xWTJRellqTmxNekJoSWl3aVZFZGZRazlVWDFSUFMwVk9Jam9pTlRBMk1EQTVNREk0T0RwQlFVVmpMVmRVU1RaQlVUbHlZbEV0UjE5R1JVWTFTVFp1UVVGeVptRjJVMDB5VVNJc0lrWkpURVVpT2pZek5qTTVMQ0pKUkNJNklucDVRbVpVWW1kRVZYSjFVbUU1ZUdadk5rTnBJaXdpUTAxRUlqb2laWGxLYW1JeU1YUlpWelZyWTNsSk5tVjVTbnBhVjJSMFdsYzFNR041U1RaWGVVcHRXbTB4ZDFwWFkyZE1XR3RuVEZjMWRtTXpVbXRoVnpSblRGZG9jRnBIVm1aWmJVWjFZbTFXZVVsRE1YVmlNMDR3V1ZoU2VrbERNWE5pTW1SeldsaGFiR0pEUW14amJrcDJZMmxCZEdGVFFucGFWMlEzWXpKV2JtSlhWblZrUkc5M1RUSlNPVXh0TVhKa2FVRjBZbGRHZDBsRVFUWmthVUYwV1hwd01rbEhlSEJaYm1kNVRtcFZaMHhZUW5sYVdFNXNaRU5DZW1KSE9UTkpRekUwVFdwWk1VeFlRbWhqYlVaMFkzbEJibUpIT1haaE1rWnZXbGRHYTB4WVRuTmhWMDVzWTNvd01VOXVTbXBNVjNoMllqSjBhR0ZIVm1oYVJEQXdUVVJ3YVZwdVNtaGlWMVo2VUZSbk5tSlhWVGxqTTFKb1kycHdhR05UTVhSaU1sSnNVRlJOTm1OdFZtMVFWRmsyWTBoT05VeFlTbXRRVkVVMldWaEZkR016VW5sYVZ6VnVaRWRuT1UxRE5EUktlVUYwV20xc2MyUkhWbmxZTWs1MllsaENjMXBZWjJkS01qRjJaRzFzYkZCWVpHaGtSMVo1WWxkR2VXRXhPWHBhV0Vwd1dsaE5kV05ITlc1SlJuUXpXVmhTYkdOdE1XaGpiWFJrVHpGemQxaFlUbXBaVjNoc1VGUmplVTFFYjNSTlZGbG5WekpzZFZoVWRHSmhWelZrVnpOa2FHUkhWbmxpVjBaNVlURXdaMkl6V214amJYaG9aVlF3ZVU5cVNXNUpRekZxWTIxWlowMXFZMmRNV0VKd1pVWTViV0pZVVdkbFdGWXlUa1JKZDJORVJYZGlSMVZuWkcxc2ExcFhPSFJoTTNSNldsZGtkRnBYTlRCUGFrRjZXa2d3ZFdKWGRESkpiREJ6U1cxT2RtSlhTbkJpYlZWcFQyeHphVnB0V25SalIxWnVTVU14TlVsRE1YVmlNMDR3V2tkc2RVbERNVzloVjFKc1dESkthR0p0Tld4amFVRjBZbTA1ZW1SSFJqQmplVUYwWWtjNWJtSkhWakphVjNkbldsaEtlV0l6U1dkTVYxbG5XVEk1ZFZreVJqQkpRekZ3U1VoT2JGb3lNV3hpYmxKNlRHMWFiVmt5UmpCSlF6RnFTVWRPZG1OSWEyZGtiV3hyV2xjNGRHRjVOWFJoTTFscFRFTktiVnB0TVhkYVYyTm5URmhyWjB4WE5YWmpNMUpyWVZjMFoweFhhSEJhUjFabVdXMUdkV0p0Vm5sSlF6RjFZak5PTUZsWVVucEpRekZ6WWpKa2MxcFlXbXhpUTBKc1kyNUtkbU5wUVhSaFUwSTNXbTFzYzFwWU1HZE1WekZvWTBOQmQwOXRSVFpOUkRoblRGaGFkVWxETVdwUGJVVm5Za2RzYVdJelFqRmplVUYwV1ZkTlowMXBRWFJaYW5Cb1NVUlpNR0Y1UW1oa1YxSndZbmsxZEdFeVJXbE1RMHB0V20weGQxcFhZMmRNV0d0blRGYzFkbU16VW10aFZ6Um5URmRvY0ZwSFZtWlpiVVoxWW0xV2VVbERNWFZpTTA0d1dWaFNla2xETVhOaU1tUnpXbGhhYkdKRFFteGpia3AyWTJsQmRHRlRRakpoVjFKc1lua3hja3h0TVhKa2FVRjBZVk5DYUdSWFVuQmllVFYwWVRKRloweFhhMmRsTWxwd1lrZFdPVWxETVhSWldFRm5UVVJ3TWtsRE1YUlpXRUZuVFZSd2FFbERNWFJaV0VGblRXcHdlbEI1UVhSWmVuQm9TVWRPZG1OSWEyZE1WMDAyWkdsQ2FtSXpRalZKUXpGcVQyNU5aMWt5T1hkbFUwRnVZekpXZVdGWFZucEpTRTV3V2pJeGFFeFdUamRqTWxab1l6STVkV1pUUWtabE1sWjNZVmhPZGxwSFZqbEpTSFIxV1ZjeGJHWlROWFJoTTFsdVNXbDNhVnB0V25SalIxWnVTVU14TlVsRE1YVmlNMDR3V2tkc2RVbERNVzloVjFKc1dESkthR0p0Tld4amFVRjBZbTA1ZW1SSFJqQmplVUYwWWtjNWJtSkhWakphVjNkbldsaEtlV0l6U1dkTVYydG5Tak5PYkdOdGJHeGplVUo2WVZka2RGbFRNVlJsTTA1c1dWaE9kbUp1TUdkU1dIUnNZMGRzZW1JeVVteG1VMEkzWW0xR2RGcFlNSFZpVjNReVNubEJkR016VFdkTlJFRTJUVVJCTmsxRVJYVk5SRUYzU1VNeE1scHVTbWhpVjFaNlNVUkZaMHhZVFdkTmVrbDNaVVJOZVUxRFFqQmhTRlowV1drMWNXTkhWbTVKYVhkcFdtMWFkR05IVm01SlF6RTFTVU14ZFdJelRqQmFSMngxU1VNeGIyRlhVbXhZTWtwb1ltMDFiR05wUVhSaWJUbDZaRWRHTUdONVFYUmlSemx1WWtkV01scFhkMmRhV0VwNVlqTkpaMHhYYTJkS00wNXNZMjFzYkdONVFucGhWMlIwV1ZNeFZHVXpUbXhaV0U1MlltNHdaMUpZZEd4alIyeDZZakpTYkdaVFFqZGliVVowV2xnd2RXSlhkREpLZVVGMFl6Tk5aMDFFUVRaTlJFMDJUVVJCZFUxRVFYZEpRekV5V201S2FHSlhWbnBKUkVWblRGaE5aMDE2U1hkbFJFMTVUVU5DTUdGSVZuUlphVFZ4WTBkV2JrbHNNVGxNUTBwMlpGaFNkMlJZVW5wSmFuQmlaWGxLYldGWGVHeEphbTlwWXpKV2VXRlhWbnBKU0U1d1dqSXhhRXhXVFhwSlJWVjRUV2xDUldWWE5XaGpNMUkxVEcweGNtUnBTWE5KYmxKdlpGY3hhVWxxYjJsa1IyZ3hZbGRKZFdGdVFteGFlVWx6U1cxNGFHSnRZMmxQYVVwc1ltMWphV1pXTVRraWZRPT0=
   encode1:
     runs-on: ubuntu-latest
     needs: download
@@ -35,19 +33,16 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}
-
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
-
       - name: Cache files after encode
         id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-1
-
   encode2:
     runs-on: ubuntu-latest
     needs: encode1
@@ -60,19 +55,16 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-1
-
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
-
       - name: Cache files after encode
         id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-2
-
   encode3:
     runs-on: ubuntu-latest
     needs: encode2
@@ -85,19 +77,16 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-2
-
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
-
       - name: Cache files after encode
         id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-3
-
   encode4:
     runs-on: ubuntu-latest
     needs: encode3
@@ -110,19 +99,16 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-3
-
       - name: Run script
         run: |
           cd /usr/src/server
           python3 encode.py
-
       - name: Cache files after encode
         id: cache-files-encode
         uses: actions/cache@v3
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-4
-
   upload:
     runs-on: ubuntu-latest
     needs: encode4
@@ -135,7 +121,6 @@ jobs:
         with:
           path: /usr/src/server
           key: ${{ github.sha }}-4
-
       - name: Run script
         run: |
           cd /usr/src/server
